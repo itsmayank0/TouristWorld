@@ -1,4 +1,5 @@
-{% load static %} 
+{% load static %}
+{% static "images" as img %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -276,26 +277,30 @@
 				</div>
 				
 				<div class="row destinations_row">
-					<div class="col">
-						<div class="destinations_container item_grid">
-
-	
+						<div class="col">
+					<div class="destinations_container item_grid">
+							
 						<!-- Destination -->
 					{% for dest in dests %}
+					
 						<div class="destination item">
-								<div class="destination_image">
-									<img src="{% static 'images/destination_4.jpg' %}" alt="">
-								</div>
-								<div class="destination_content">
-									<div class="destination_title"><a href="destinations.html">{{dest.title}}</a></div>
-									<div class="destination_subtitle">
-										<p>{{dest.description}}</p>
-									</div>
-									<div class="destination_price">From ${{dest.price}}</div>
-								</div>
+							<div class="destination_image">
+								<img src="{{img}}/{{dest.img}}" alt="">
+							{% if dest.offer %}
+								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+							{% endif %}
 							</div>
-
-						{% endfor %}
+							
+							<div class="destination_content">
+								<div class="destination_title"><a href="destinations.html">{{dest.title}}</a></div>
+								<div class="destination_subtitle">
+									<p>{{dest.description}}</p>
+								</div>
+								<div class="destination_price">From ${{dest.price}}</div>
+							</div>
+						</div>
+						
+					{% endfor %}
 
 						</div>
 					</div>

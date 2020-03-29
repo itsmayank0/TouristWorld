@@ -7,6 +7,7 @@ def index(request):
     dest1.title = "Mumbai"
     dest1.img = "destination_1.jpg"
     dest1.description = 'This is the city of Dreams'
+    dest1.offer = True
     dest2 = destination()
     dest2.price = 550
     dest2.img = "destination_2.jpg"
@@ -16,6 +17,9 @@ def index(request):
     dest3.img = "destination_3.jpg"
     dest3.price = 869
     dest3.title = "Hydrabad"
-    dest3.description = 'I love Biryani'
+    dest3.description = 'First Biryani'
+    dest3.offer = True
     dests = [dest1,dest2,dest3]
     return render(request, 'index.html',{'dests': dests})
+
+# python manage.py runserver
