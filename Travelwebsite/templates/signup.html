@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>signUp Page</title>
+<style>
+	body{
+    margin:0;
+    padding: 0%;
+ background-size:cover;
+ background-position: center;
+ font-family: Arial, Helvetica, sans-serif;
+ background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../11.jpg');
+	background-size: cover;    
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+}
+
+.loginbox{
+    width: 40%;
+    height: 95%;
+    background:  rgba(109, 134, 189, 0.44);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border: solid ;
+    border-radius: 10px;
+
+    padding: 70px 30px;
+}
+
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 50px)
+}
+h1{
+    margin-top: 3px;
+    padding: 5px 5px 15px;
+    text-align: center;
+    font-size: 25px;
+    font-family: "times new roman", Times, serif;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline:none;
+    height:40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.loginbox input[type="submit"]
+{
+    border: none;
+    background: #ff6600;
+    position: center;
+    float: center;
+    margin-left: 35%;
+    margin-right: 15%;
+    outline:none;
+    height:40px;
+    width: 30%;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px; 
+}
+
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #fff;
+}
+
+.loginbox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover{
+    color: #ffc107;
+}
+
+</style>
+</head>
+<body>
+	<div class="loginbox">
+		<h1>SignUp</h1>
+		<form>
+			<p>First name</p>
+			<input type="text" name="" placeholder="enter your first name ">
+			<p>Last name</p>
+			<input type="text" name="" placeholder="enter your last name ">
+			<p>Password</p>
+			<input type="password" name="" placeholder="enter password">
+			<p>Confirm Password</p>
+			<input type="password" name="" placeholder="confirm password">
+			<p>Email</p>
+			<input type="text" name="" placeholder=" jhon123@gmail.com">
+			<input type="submit" name="" value="submit">
+		</form>
+	</div>
+    </body>
+    </html>		 

@@ -30,7 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 INSTALLED_APPS = [
+    'signup.apps.SignupConfig',
     'landingpage.apps.LandingpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -129,10 +131,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-#MEDIA_URL = '/images/'
 
-#MEDIAFILES_DIRS = [
-#   os.path.join(BASE_DIR, 'images')
-#]
+MEDIA_URL = '/images/'
 
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

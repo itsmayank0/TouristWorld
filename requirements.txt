@@ -1,3 +1,11 @@
+#Virtual env
+virtualenvwrapper-win
+
 django==3.0.4
+
+#postgres connector 
 psycopg2
+
+#Imagehandling Library for database
 Pillow
+# python manage.py runserver
