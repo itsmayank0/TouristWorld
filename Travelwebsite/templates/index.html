@@ -35,12 +35,17 @@
 									<ul class="d-flex flex-row align-items-start justify-content-start">
 										<li class="active"><a href="index.html">Home</a></li>
 										<li><a href="about.html">About us</a></li>
+										{% if user.is_authenticated%}
+										<li>Hello, {{user.first_name}}</li>
+										<li><a href="logout/logout">SignOut</a></li>
+										{%else%}
 										<li><a href="signup/register">Signup</a></li>
-										<li><a href="signin">Signin</a></li>
+										<li><a href="signin/signin">Signin</a></li>
+										{%endif%}
 										<li><a href="contact.html">Contact</a></li>
 									</ul>
 								</nav>
-								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+								<div class="header_phone ml-auto">Call us: 0755 678 33</div>
 
 								<!-- Hamburger -->
 
@@ -87,7 +92,7 @@
 				</ul>
 			</div>
 			<div class="menu_social">
-				<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+				<div class="menu_phone ml-auto">Call us: 0755 1212</div>
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

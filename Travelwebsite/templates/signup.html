@@ -108,8 +108,11 @@ h1{
 </head>
 <body>
 	<div class="loginbox">
-        {%block content%}
-        {%endblock%}
+        {%  for message in messages %}
+        <p class="errornote">
+            "{{message}}"
+        </p>
+        {%  endfor  %}
 		<h1 style="margin-bottom: unset;">SignUp</h1>
 		<form action="register" method="POST">
             {% csrf_token %}

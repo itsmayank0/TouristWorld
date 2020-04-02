@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    'signin.apps.SigninConfig',
     'signup.apps.SignupConfig',
     'landingpage.apps.LandingpageConfig',
     'django.contrib.admin',
