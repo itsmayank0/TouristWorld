@@ -8,3 +8,8 @@ class destination(models.Model):
     title = models.CharField(max_length=100)
     offer = models.BooleanField(default=False)
     reviews = models.IntegerField()
+
+class SiteReview(models.Model):
+
+    review = models.TextField()
+    
