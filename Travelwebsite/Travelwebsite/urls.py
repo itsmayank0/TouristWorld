@@ -26,7 +26,8 @@ urlpatterns = [
     path('signin/', include('signin.urls')),
     path('logout/', include("logout.urls")),
     path('about/', include("about.urls")),
-    path('sms/', include("sms_sending.urls"))
+    path('sms/', include("sms_sending.urls")),
+    path('subscribe/', include('subscribe.urls'))
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
