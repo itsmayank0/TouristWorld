@@ -7,7 +7,6 @@ def index(request):
   
     return render(request, 'index.html',{'dests': dests})
 
-# python manage.py runserver
 def formsubmission(request):
     if request.method == 'GET':
         return render(request, 'adddest.html')

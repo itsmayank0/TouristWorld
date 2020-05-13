@@ -4,14 +4,14 @@ from django.http import HttpResponse
 
 
 def sending_details(request):
-    account_sid = '{your_account sid}'
-    auth_token = 'your stoken'
+    account_sid = 'AC828dbef1042ff22b9127bdf30212da88'
+    auth_token = 'dbc86e145e8264b8a5459422a6bd07f9'
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-                     body="Hlw bro, Dajngo says Kaise Ho Lokesh",
+                     body="Hlw Mosaji This is the Message OTP is 4843838 mayank",
                      from_='+17177272675',
-                     to='+'
+                     to='+919691896105'
                  )
 
     print(message.sid)

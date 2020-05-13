@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.models import auth, User
+from django.contrib.auth.models import User
 from django.contrib import messages 
 
 # Create your views here.
@@ -26,7 +26,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name, email=email)        
                 user.save()
                 messages.info(request,"User Successfully created account")
-                return redirect('/')
+                return redirect('/signin/signin')
                 # return render(request,'exist.html', {'message':'User created!'})
         else:
             messages.info(request, "Password Dont match")

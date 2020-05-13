@@ -3,6 +3,7 @@ from django.contrib.auth.models import auth
 from django.contrib import messages
 # Create your views here.
 
+
 def signin(request):
         if request.method == "POST":
             username = request.POST['username']
