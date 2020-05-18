@@ -1,11 +1,18 @@
 from django.shortcuts import render,redirect
-from .models import destination
-# Create your views here.
+from .models import destination,Testimonials
+
+
 def index(request):
-    
     dests = destination.objects.all()
-  
-    return render(request, 'index.html',{'dests': dests})
+    testimonials = Testimonials.objects.all()
+    offer_count = 0
+    test_count = 0
+    for i,j in zip(dests,testimonials):
+        if i.offer:
+            offer_count +=1
+        if j.verified_review:
+            test_count +=1
+    return render(request, 'index.html',{'dests': dests, 'offer_count': offer_count, 'testimonials': testimonials, 'test_count': test_count})
 
 def formsubmission(request):
     if request.method == 'GET':

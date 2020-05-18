@@ -16,23 +16,22 @@ def register(request):
 
         if password==confirm_password:
             if User.objects.filter(username=username).exists():
-                messages.info(request,"Username Already exist")
+                messages.info(request,"Username Already exist🧐")
                 return redirect('register')
 
             elif User.objects.filter(email=email).exists():
-                messages.info(request,"Email Already exist")
+                messages.info(request,"Email Already exist🧐")
                 return redirect('register')
             else:
                 user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name, email=email)        
                 user.save()
-                messages.info(request,"User Successfully created account")
+                messages.info(request,"Your account Successfully Created🥳")
                 return redirect('/signin/signin')
                 # return render(request,'exist.html', {'message':'User created!'})
         else:
-            messages.info(request, "Password Dont match")
+            messages.info(request, "Password Dont match🧐")
             return redirect('register')
             # return render(request,'exist.html', {'message':'Passwords dont match!'})
         
     else:    
         return render(request, 'signup.html')
-

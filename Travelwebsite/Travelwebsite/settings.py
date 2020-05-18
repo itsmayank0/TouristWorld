@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'about',
     'sms_sending',
     'subscribe',
+    'destinations',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'YourGmail@gmail.com'
-EMAIL_HOST_PASSWORD = 'YourPassword'
+EMAIL_HOST_USER = 'sapnaravat0759@gmail.com'
+EMAIL_HOST_PASSWORD = 'mayankirar@123'
 ##before sending mail through gmail make sure to turn on less secure app setting in gmail

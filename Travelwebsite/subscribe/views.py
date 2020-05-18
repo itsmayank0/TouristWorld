@@ -8,18 +8,19 @@ from django.contrib import messages
 
 def subscribe_details(request):
     if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        if subscribers.objects.filter(email=email).exists():
-          dests = destination.objects.all() 
-          messages.info(request, "You are already In our Email List")
-          return redirect('/', {'dests':dests}) 
-        else:
-          user = subscribers(name=name, email = email)
-          user.save()
-          subject, from_email, to = "WelCome Mail By TouristWorld", EMAIL_HOST_USER,email
-          text_content = "Thanks For Subscribing our weekly newsetlers"
-          html_content = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--[if IE]><html xmlns="http://www.w3.org/1999/xhtml" class="ie"><![endif]--><!--[if !IE]><!--><html style="margin: 0;padding: 0;" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]--><head>
+        try:
+          name = request.POST['name']
+          email = request.POST['email']
+          if subscribers.objects.filter(email=email).exists():
+            dests = destination.objects.all() 
+            messages.info(request, "You are already In our Email List")
+            return redirect('/', {'dests':dests}) 
+          else:
+            user = subscribers(name=name, email = email)
+            user.save()
+            subject, from_email, to = "WelCome Mail By TouristWorld", EMAIL_HOST_USER,email
+            text_content = "Thanks For Subscribing our weekly newsetlers"
+            html_content = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--[if IE]><html xmlns="http://www.w3.org/1999/xhtml" class="ie"><![endif]--><!--[if !IE]><!--><html style="margin: 0;padding: 0;" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]--><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge" /><!--<![endif]-->
@@ -667,12 +668,17 @@ body{background-color:#fff}.logo a:hover,.logo a:focus{color:#859bb1 !important}
   
 </body></html>
 '''
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
-        messages.info(request, "Thanks for subscribing Us :)")
-        dests = destination.objects.all()
-        return redirect('/', {'dests':dests}) 
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            messages.info(request, "Thanks for subscribing Us 🥳")
+            dests = destination.objects.all()
+            return redirect('/', {'dests':dests}) 
+        except Exception as e:
+          messages.info(request, "Hmm🤔, Seems Like There is No Internet! ")
+          dests = destination.objects.all()
+          return redirect('/', {'dests':dests})
+
         #Fuction for sending mail
     else:
         dests = destination.objects.all()

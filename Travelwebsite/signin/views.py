@@ -11,11 +11,11 @@ def signin(request):
             user = auth.authenticate(username=username,password=password)
             if user is None:
                 
-                messages.info(request, "Invalid id & Password")
+                messages.info(request, "Hmm, Invalid id OR Password🧐")
                 return render(request, "signin.html")
             else:
                 auth.login(request, user) 
-                messages.info(request, "Successfully log in!")
+                messages.info(request, "Successfully log in🥳!")
                 return redirect('/')     
         else:
             return render(request,'signin.html')
