@@ -6,6 +6,6 @@ Full travel website back end build on Django
  2. Install postgresSQL & pgadmin4 for working with database.
  3. Use python manage.py migrate for migrations
 
-#Tips:
+# Tips:
  * In-order to use this project, You need to populate your database With some destinations.
  * & Testimonials etc.
