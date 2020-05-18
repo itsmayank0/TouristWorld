@@ -7,5 +7,5 @@ Full travel website back end build on Django
  3. Use python manage.py migrate for migrations
 
 #Tips:
- * In-order to use this project< You need to populate your database With some destinations.
+ * In-order to use this project, You need to populate your database With some destinations.
  * & Testimonials etc.
