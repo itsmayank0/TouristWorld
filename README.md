@@ -1,4 +1,4 @@
-# TravelWebsite
+# TouristWorld
 Full travel website back end build on Django
 
 # Installation steps:
