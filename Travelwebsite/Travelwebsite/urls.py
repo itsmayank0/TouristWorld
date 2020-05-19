@@ -3,6 +3,7 @@
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
+
 Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
@@ -23,16 +24,23 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('destinations/admin/', admin.site.urls),
     path('about/admin/', admin.site.urls),
+    path('about/about/admin/', admin.site.urls),
     path('destinations/about/admin/', admin.site.urls),
     path('', include('landingpage.urls')),
     path('signup/',include('signup.urls')),
+    path('about/signup/',include('signup.urls')),
+    path('about/about/signup/',include('signup.urls')),
     path('signin/', include('signin.urls')),
+    path('about/signin/', include('signin.urls')),
+    path('about/about/signin/', include('signin.urls')),
     path('logout/', include("logout.urls")),
     path('about/logout/', include("logout.urls")),
     path('about/', include("about.urls")),
     path('destinations/about/', include("about.urls")),
     path('sms/', include("sms_sending.urls")),
     path('subscribe/', include('subscribe.urls')),
+    path('about/subscribe/', include('subscribe.urls')),
+    path('about/about/subscribe/', include('subscribe.urls')),
     path('destinations/', include('destinations.urls')),
     path('destinations/subscribe/', include('subscribe.urls')),
     path('signin/signup/', include('signup.urls')),
