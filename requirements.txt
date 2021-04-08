@@ -1,7 +1,7 @@
 #Virtual env
 virtualenvwrapper-win
 
-django==3.0.7
+django==3.0.14
 
 #postgres connector 
 psycopg2
