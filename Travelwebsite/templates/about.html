@@ -33,16 +33,16 @@
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="/">Home</a></li>
-									<li><a href="about/">About us</a></li>
+									<li><a href="/about">About us</a></li>
 									{% if user.is_authenticated%}
 									<li><a style="color: azure;">Hello, {{user.username}}</a></li>
-									<li><a href="logout/logout">SignOut</a></li>
+									<li><a href="/logout">SignOut</a></li>
 									{% else %}
-									<li><a href="signup/register">Signup</a></li>
-									<li><a href="signin/signin">Signin</a></li>
+									<li><a href="/signup">Signup</a></li>
+									<li><a href="/signin">Signin</a></li>
 									{% endif %}
 									{% if user.is_staff %}
-									<li><a href="sms/sending_details">Contact Details</a></li>
+									<li><a href="/sms/sending_details">Contact Details</a></li>
 									{% endif %}
 								</ul>
 							
@@ -96,11 +96,11 @@
 			<ul>
 				<li><a href="/">Home</a></li>
 				
-				<li><a href="about/team">About us</a></li>
+				<li><a href="/about">About us</a></li>
 				
-				<li><a href="signup/register">Sign Up</a></li>
+				<li><a href="/signup">Sign Up</a></li>
 				
-				<li><a href="signin/signin">Sign in</a></li>
+				<li><a href="/signin">Sign in</a></li>
 				
 			</ul>
 		</div>

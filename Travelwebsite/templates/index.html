@@ -37,10 +37,10 @@
 										<li><a href="about/">About us</a></li>
 										{% if user.is_authenticated%}
 										<li><a style="color: azure;">Hello, {{user.username}}</a></li>
-										<li><a href="logout/logout">SignOut</a></li>
+										<li><a href="/logout">SignOut</a></li>
 										{% else %}
-										<li><a href="signup/register">Signup</a></li>
-										<li><a href="signin/signin">Signin</a></li>
+										<li><a href="{% url 'register' %}">Signup</a></li>
+										<li><a href="{% url 'Signin' %}">Signin</a></li>
 										{% endif %}
 										{% if user.is_staff %}
 										<li><a href="sms/sending_details">Contact Details</a></li>
@@ -97,11 +97,11 @@
 				<ul>
 					<li><a href="/">Home</a></li>
 					
-					<li><a href="about/team">About us</a></li>
+					<li><a href="/about">About us</a></li>
 					
-					<li><a href="signup/register">Sign Up</a></li>
+					<li><a href="/signup">Sign Up</a></li>
 					
-					<li><a href="signin/signin">Sign in</a></li>
+					<li><a href="/signin">Sign in</a></li>
 					
 				</ul>
 			</div>
@@ -307,14 +307,14 @@
 					
 						<div class="destination item">
 							<div class="destination_image">
-								<a href="destinations/destination_page"><img src="{{dest.img.url}}" alt=""></a>
+								<a href="/destinations"><img src="{{dest.img.url}}" alt=""></a>
 							{% if dest.offer %}
-								<div class="spec_offer text-center"><a href="destinations/destination_page">Special Offer</a></div>
+								<div class="spec_offer text-center"><a href="/destinations">Special Offer</a></div>
 							{% endif %}
 							</div>
 							
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations/destination_page">{{dest.title}}</a></div>
+								<div class="destination_title"><a href="/destinations">{{dest.title}}</a></div>
 								<div class="destination_subtitle">
 									<p>{{dest.description}}</p>
 								</div>
@@ -396,10 +396,10 @@
 										<div>02</div>
 										<div>june</div>
 									</div>
-									<div class="news_post_title"><a href="destinations/destination_page">Best Summer trips for Tourist</a></div>
+									<div class="news_post_title"><a href="/destinations">Best Summer trips for Tourist</a></div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="destinations/destination_page">lifestyle & travel</a></li>
+											<li><a href="/destinations">lifestyle & travel</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text"> 
@@ -417,10 +417,10 @@
 										<div>03</div>
 										<div>Dec</div>
 									</div>
-									<div class="news_post_title"><a href="destinations/destination_page">Best trips For December</a></div>
+									<div class="news_post_title"><a href="/destinations">Best trips For December</a></div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="destinations/destination_page">lifestyle & travel</a></li>
+											<li><a href="/destinations">lifestyle & travel</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text">
@@ -438,10 +438,10 @@
 										<div>25</div>
 										<div>dec</div>
 									</div>
-									<div class="news_post_title"><a href="destinations/destination_page">Best trips For New Year!</a></div>
+									<div class="news_post_title"><a href="/destinations">Best trips For New Year!</a></div>
 									<div class="news_post_category">
 										<ul>
-											<li><a href="destinations/destination_page">lifestyle & travel</a></li>
+											<li><a href="/destinations">lifestyle & travel</a></li>
 										</ul>
 									</div>
 									<div class="news_post_text">
@@ -465,7 +465,7 @@
 								</div>
 							</div>
 							<div class="travello_container">
-								<a href="destinations/destination_page">
+								<a href="/destinations">
 									<div class="d-flex flex-column align-items-center justify-content-end">
 										<span class="travello_title">Get a 20% Discount</span>
 										<span class="travello_subtitle">Buy Your Vacation Online Now</span>
